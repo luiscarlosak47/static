@@ -169,7 +169,6 @@ app-footer {
   background: radial-gradient(ellipse at top left, color-mix(in srgb, var(--primary-color) 35%, transparent) 0%, transparent 55%),
     radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--third-color) 22%, transparent) 0%, transparent 60%), var(--footer-bg);
   color: var(--footer-text);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
   overflow: hidden;
   overflow: clip;
   position: relative;
