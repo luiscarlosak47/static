@@ -16,4 +16,8 @@ export default {
   home: "Home",
   language: "Language",
   select_language: "Select Language",
+  footer_about: "Your whole business in the cloud: operating system, apps, games and tools to build, on any device.",
+  footer_open: "Open Luigi OS",
+  footer_products: "Products",
+  footer_rights: "All rights reserved",
 };

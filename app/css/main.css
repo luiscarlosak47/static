@@ -158,3 +158,209 @@ app-header go-button:hover {
     --app-icon-size: 96px;
   }
 }
+
+/* ── Company footer (app-footer): dark band, product spectrum, HYPΞRCLOUD wordmark. ── */
+app-footer {
+  --footer-bg: #050b1f;
+  --footer-text: #e2e8f0;
+  --footer-muted: #94a3b8;
+  display: flex;
+  margin-top: auto;
+  background: radial-gradient(ellipse at top left, color-mix(in srgb, var(--primary-color) 35%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at bottom right, color-mix(in srgb, var(--third-color) 22%, transparent) 0%, transparent 60%), var(--footer-bg);
+  color: var(--footer-text);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  overflow: hidden;
+  overflow: clip;
+  position: relative;
+  --link-color: var(--footer-text);
+  --link-color-hover: #fff;
+}
+
+app-footer .contain {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 2);
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: calc(var(--gap) * 2) var(--gap) var(--gap);
+}
+
+/* Spans the whole footer width (positioned on app-footer, not on the centred content). */
+app-footer .spectrum {
+  display: flex;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+app-footer :is(.top, .bottom) {
+  position: relative;
+  z-index: 1;
+}
+
+app-footer .spectrum span {
+  flex: 1;
+  background: linear-gradient(90deg, var(--color1), var(--color2));
+}
+
+app-footer .top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--gap) * 2);
+}
+
+app-footer .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
+app-footer .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  text-decoration: none;
+}
+
+app-footer picture {
+  display: flex;
+  flex: none;
+  background-image: var(--icon);
+  background-size: cover;
+  background-position: center;
+}
+
+app-footer .logo picture {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12), 0 8px 24px color-mix(in srgb, var(--primary-color) 55%, transparent);
+}
+
+app-footer .appName {
+  font-weight: bold;
+  font-size: 150%;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+app-footer .appName :nth-child(4) {
+  color: var(--third-color);
+}
+
+app-footer .tagline {
+  font-size: 85%;
+  color: var(--footer-muted);
+}
+
+app-footer .about {
+  margin: 0;
+  max-width: 420px;
+  line-height: 1.5;
+  color: var(--footer-muted);
+}
+
+app-footer .cta {
+  padding: calc(var(--gap) * 0.75) calc(var(--gap) * 1.5);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-color), var(--third-color));
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary-color) 45%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+app-footer .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--third-color) 55%, transparent);
+}
+
+app-footer .products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--gap) * 0.5);
+  align-content: start;
+}
+
+app-footer .caption {
+  grid-column: 1 / -1;
+  font-size: 80%;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--footer-muted);
+}
+
+app-footer .products a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gap) * 0.75);
+  padding: calc(var(--gap) * 0.5);
+  border-radius: calc(var(--border-radius) * 0.5);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+app-footer .products a:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color1) 30%, transparent), color-mix(in srgb, var(--color2) 20%, transparent));
+}
+
+app-footer .products picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color2) 60%, transparent);
+}
+
+app-footer .bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: var(--gap) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 85%;
+  color: var(--footer-muted);
+}
+
+app-footer .bottom go-button:hover {
+  color: var(--third-color);
+}
+
+app-footer .watermark {
+  /* Sized to the footer width (no transform, no overflow): never adds horizontal scroll on phones. */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  overflow: hidden;
+  text-align: center;
+  font-size: min(13vw, 190px);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  user-select: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  app-footer .contain {
+    padding: calc(var(--gap) * 2) calc(var(--gap) * 1.5) var(--gap);
+  }
+
+  app-footer .top {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}

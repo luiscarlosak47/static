@@ -12,6 +12,9 @@ Go.set("home:route", function () {
         class: "mainMenu",
         childrens: Go.do("apps:list").map((app, index) => Go.do("apps:app", app, index)),
       },
+      {
+        tag: "app-footer",
+      },
     ],
   });
 });

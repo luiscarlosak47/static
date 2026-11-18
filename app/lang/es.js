@@ -16,4 +16,8 @@ export default {
   home: "Inicio",
   language: "Idioma",
   select_language: "Seleccionar idioma",
+  footer_about: "Tu empresa completa en la nube: sistema operativo, aplicaciones, juegos y herramientas para crear, en cualquier dispositivo.",
+  footer_open: "Abrir Luigi OS",
+  footer_products: "Productos",
+  footer_rights: "Todos los derechos reservados",
 };

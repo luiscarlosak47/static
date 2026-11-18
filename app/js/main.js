@@ -4,6 +4,7 @@ import "./apps.js";
 import "./home.js";
 
 Go.component("app-header", "/app/components/app-header.js");
+Go.component("app-footer", "/app/components/app-footer.js");
 
 window.addEventListener("load", () => {
   const lang = Go.if({
